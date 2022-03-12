@@ -1,0 +1,134 @@
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --color-main: #1b2634;
+    --color-secondary: #fff;
+    --color-text-A: #f7dc6f;
+    --color-text-B: #f9e79f;
+    --color-text-C: #fcf3cf;
+    --color-button: #f1c40f;
+    --color-button-ghost-border: rgba(0, 0, 0, 0);
+    --color-black: #000;
+    --color-white: #fff;
+    --font1: 60px;
+    --font2: 40px;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('./assets/fonts/lato.woff2') format('woff2'),
+        url('./assets/fonts/lato.woff') format('woff'),
+        url('./assets/fonts/lato.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('./assets/fonts/gilroy.eot');
+    src: url('./assets/fonts/gilroy.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/gilroy.woff2') format('woff2'),
+        url('./assets/fonts/gilroy.woff') format('woff'),
+        url('./assets/fonts/gilroy.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: var(--color-white);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    /* временно */
+    width: auto;
+    height: 60px;
+    background-color: var(--color-main);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.logo {
+    width: 44px;
+    height: 44px;
+    border: 3px solid var(--color-text-B);
+    border-radius: 50%;
+    background-color: white;
+}
+
+.nav {
+    margin-left: auto;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+}
+
+.nav-item {
+    padding: 0px 10px;
+}
+
+.nav-link {
+    color: var(--color-text-B);
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 60px;
+    text-decoration: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
+    transition: .2s linear;
+}
+
+.nav-link:hover {
+    border-color: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.double-border-button {
+    background-color: var(--color-main);
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
+    padding: 7px 24px;
+    position: relative;
+    border: 2px solid var(--color-button);
+    color: var(--color-text-B);
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    transition: .4s;
+  }
+
+.double-border-button:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border: 2px solid var(--color-button-ghost-border);
+    transition: .4s;
+}
+
+.double-border-button:hover:after {
+    border-color: var(--color-button);
+    width: calc(100% - 10px);
+    height: calc(100% + 10px);
+  }
