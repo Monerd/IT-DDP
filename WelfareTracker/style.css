@@ -3,9 +3,9 @@ html {
 }
 
 :root {
-    --color-main: #1b2634;
-    --color-secondary: #fff;
-    --color-text-A: #f7dc6f;
+    --color-main: #1b2634; 
+    --color-secondary: #40597A;
+    --color-text: #f7dc6f;
     --color-text-B: #f9e79f;
     --color-text-C: #fcf3cf;
     --color-button: #f1c40f;
@@ -43,17 +43,26 @@ body {
 }
 
 header {
-    /* временно */
-    width: auto;
     height: 60px;
     background-color: var(--color-main);
 }
 
-.container {
+header .container {
     display: flex;
     align-items: center;
+    background-color: inherit;
+    height: 60px;
+    width: 90%;
+}
+
+.container {
     margin: 0 auto;
-    padding: 0 60px;
+    width: 80%;
+    background-color: var(--color-white);
+}
+
+.a-logo {
+    display: inherit;
 }
 
 .logo {
@@ -85,7 +94,6 @@ header {
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
-    line-height: 60px;
     text-decoration: none;
     border-bottom: 2px solid rgba(255, 255, 255, 0);
     transition: .2s linear;
@@ -102,7 +110,6 @@ button {
 .double-border-button {
     background-color: var(--color-main);
     text-decoration: none;
-    display: inline-block;
     margin: 0 10px;
     padding: 7px 24px;
     position: relative;
@@ -131,4 +138,77 @@ button {
     border-color: var(--color-button);
     width: calc(100% - 10px);
     height: calc(100% + 10px);
-  }
+}
+
+.button-burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 2;
+}
+  
+.line {
+    width: 80%;
+    height: 2px;
+    background: var(--color-text-B);
+    margin: 3px 0;
+    z-index: 15;
+    transition: all 0.3s ease-in-out;
+}
+  
+.button-burger.open .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+  
+.button-burger.open .line2 {
+    opacity: 0;
+}
+  
+.button-burger.open .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+h1 {
+    font-family: 'Gilroy', sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 30px;
+    margin: 0;
+}
+
+.about-text {
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    
+}
+
+/* планшеты */
+@media (max-width: 768px) {
+    .button-burger {
+        display: flex;
+    }
+
+    .nav-list {
+        display: none;
+    }
+
+    header .double-border-button {
+        display: none;
+    }
+}
+
+/* телефоны */
+@media (max-width: 320px) {
+    
+}
