@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/svg/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <title>Welfare Tracker - трекер благосостояния</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js">
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a class="a-logo" href="./index.html"><img class="logo" src="./assets/svg/logo.svg" alt="logo"></a>
+            <span class="text-logo">Welfare Tracker</span>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="./#transaction">Транзакции</a></li>
+                    <li class="nav-item"><a href="./#reminders">Планируемые транзакции</a></li>
+                    <li class="nav-item"><a href="./blog.html">Блог</a></li>
+                    <li class="nav-item"><a href="./#about">О нас</a></li>
+                </ul>
+            </nav>
+            <button class="double-border-button">Меню</button>
+            <div class="button-burger">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
+            </div>
+        </div>
+    </header>
+    <aside>
+        <div class="container">
+            <ul class="nav-list">
+                <li class="side nav-item"><a href="">График</a></li>
+                <li class="side nav-item"><a href="">Платежи</a></li>
+                <li class="side nav-item"><a href="">Прогноз</a></li>
+            </ul>
+        </div>
+    </aside>
+    <main>
+        <div class="container">
+            <!-- краткая информация о сайте -->
+            <section class="about">
+                <div class="about-container">
+                    <div class="about-text">
+                        <h1>Welfare Tracker</h1>
+                        <p>
+                            С нами вести финансы станет просто как никогда!<br>
+                            Ведите учёт доходов и расходов в пару кликов.
+                        </p>
+                    </div>
+                    <img class="about-img" src="./assets/img/money.jpg" alt="money">
+                </div>
+            </section>
+            <!-- счета -->
+            <section class="savings">
+                <h2 class="section-title">
+                    Мои счета
+                </h2>
+                <div class="savings-container">
+                    <div class="savings-background">
+                        <a class="savings-settings" href="#saving-settings">
+                            <img class="settings-svg" src="./assets/svg/gears.svg" alt="Настройки">
+                        </a>
+                        <div class="balance-count">10.000$</div>
+                        <p>Баланс</p>
+                        <hr>
+                        <p>Наличные</p>
+                        <div class="balance-card-count">4.500$</div>
+                        <p>Карты</p>
+                        <div class="balance-cash-count">5.500$</div>
+                    </div>
+                </div>
+            </section>
+            <!-- график сбережений -->
+            <section class="chart">
+                <h2 class="section-title">
+                    График сбережений
+                </h2>
+                <div class="chart-container">
+                    <div id="chart"></div>
+                </div>
+            </section>
+            <!-- запланированные платежи -->
+            <section class="planned">
+                <h2 class="section-title">
+                    Платежи
+                </h2>
+                <div class="planned-container">
+                    <div class="planned-background">
+                        <div class="date">
+                            <span>29 марта</span>
+                        </div>
+                        <div class="planned-info">
+                            <span class="planned-place">Ремонт автомобиля</span>
+                            <span class="planned-price">750$</span>
+                        </div>
+                        <div>s</div>
+                        <div>s</div>
+                        <div>s</div>
+                        <div>s</div>
+                        <div>s</div>
+                    </div> 
+                </div>
+            </section>
+            <!-- прогноз сбережений -->
+            <section class="forecast">
+                <h2 class="section-title">
+                    Прогноз сбережений
+                </h2>
+                <div class="forecast-container">
+                    <div class="forecast-background">
+                        <table class="forecast-table">
+
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div>
+                <span>©</span>
+                <span>2022</span>
+                <span><a href="https://github.com/Monerd/">github</a></span>
+            </div>
+            <div>
+                <span>Welfare Tracker</span>
+            </div>
+            <div>
+                <ul class="footer-social-data-items">
+                    <li class="footer-social-data-item">
+                        <a href="https://www.facebook.com/">
+                            <img src="./assets/svg/facebook.svg" alt="facebook">
+                        </a>
+                    </li>
+                    <li class="footer-social-data-item">
+                        <a href="https://twitter.com/">
+                            <img src="./assets/svg/twitter.svg" alt="twitter">
+                        </a>
+                    </li>
+                    <li class="footer-social-data-item">
+                        <a href="https://web.telegram.org/k/">
+                            <img src="./assets/svg/telegram.svg" alt="telegram">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="./scripts/burger-button.js"></script>
+    <script src="./scripts/chart.js"></script>
+    <script src="./scripts/forecast-table-creator.js"></script>
+</body>
+</html>
