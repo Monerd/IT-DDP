@@ -2,6 +2,43 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    background-color: var(--color-white);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* 
+    Вытягивание содержимого для футера
+*/
+
+html,
+body {
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+main {
+    display: flex;
+    flex: 1 0 auto;
+}
+
+footer {
+    display: flex;
+    flex: 0 0 auto;
+    margin-top: 2vh;
+}
+
+/* 
+    конец вытягивания.
+*/
+
 :root {
     --color-main: #1b2634; 
     --color-secondary: #40597A;
@@ -37,12 +74,6 @@ html {
     font-style: normal;
 }
 
-body {
-    background-color: var(--color-white);
-    margin: 0;
-    padding: 0;
-}
-
 .container {
     margin: 0 auto;
     width: 80%;
@@ -66,11 +97,10 @@ aside .container {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    border-top: 2px solid var(--color-text-C);
-    border-bottom: 2px solid var(--color-text-C);
-    height: 40px;
+    height: 35px;
     width: 100%;
     background-color: var(--color-main);
+    border-top: 2px solid var(--color-text-C);;
 }
 
 .side {
@@ -78,34 +108,36 @@ aside .container {
 }
 
 main .container {
-    display: grid;
-    grid-template-columns: 30% repeat(2, 35%);
-    grid-template-rows: auto;
-    grid-template-areas: 
-    'about about about'
-    'savings chart chart'
-    'planned chart chart'
-    'forecast forecast forecast';
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+section {
+    height: max-content;
 }
 
 section.about {
-    grid-area: about;
+    margin: 2vh;
+    width: 100%;
 }
 
 section.savings {
-    grid-area: savings;
+    width: 30%;
 }
 
 section.planned {
-    grid-area: planned;
+    display: none;
+    width: 70%;
 }
 
 section.chart {
-    grid-area: chart;
+    width: 70%;
 }
 
 section.forecast {
-    grid-area: forecast;
+    display: none;
+    width: 100%;
 }
 
 footer {
@@ -266,10 +298,6 @@ span {
     margin: 0;
 }
 
-section.about {
-    margin: 4vh;
-}
-
 .about-container {
     display: flex;
     align-items: center;
@@ -313,19 +341,22 @@ hr {
 }
 
 .savings-container {
-    background-color: var(--color-text-C);
+    position: relative;
+    display: flex;
+    background-color: var(--color-white);
+    border: 1vh solid var(--color-text-C);
     margin: 2vh;
     padding: 1vh;
+    height: 20vh;
 }
 
-.savings-background {
-    position: relative;
+.savings-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background-color: var(--color-white);
-    padding: 2vh;
+    width: 100%;
+    height: 100%;
 }
 
 .savings-settings {
@@ -337,7 +368,7 @@ hr {
     transition: .4s linear;
 }
 
-.savings-background:hover .savings-settings {
+.savings-container:hover .savings-settings {
     display: block;
 }
 
@@ -353,43 +384,58 @@ hr {
     height: 50vh;
 }
 
-#chart {
+#googlechart {
     width: 100%;
     height: 100%;
 }
 
 .planned-container {
-    background-color: var(--color-text-C);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--color-white);
+    border: 1vh solid var(--color-text-C);
     margin: 2vh;
     padding: 1vh;
+    height: 20vh;
 }
 
-.planned-background {
+.planned-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background-color: var(--color-white);
-    padding: 2vh;
+    width: 33%;
+    height: 100%;
+}
+
+.planned-price-info,
+.planned-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.planned-comment,
+.planned-account {
+    font-style: italic;
+    font-size: small;
 }
 
 .forecast-container {
-    background-color: var(--color-text-C);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--color-white);
+    border: 1vh solid var(--color-text-C);
     margin: 2vh;
     padding: 1vh;
 }
 
-.forecast-background {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--color-white);
-    padding: 2vh;
-}
-
 .forecast-table {
     width: 100%;
-    overflow: scroll;
 }
 
 /* 
@@ -507,6 +553,208 @@ BLOG
     padding: 20px;
 }
 
+/*
+    Транзакции
+*/
+
+.transaction-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.search-add-transactions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2vh 0;
+    width: 100%;
+}
+
+.transaction-add-btn {
+    height: max-content;
+    padding: 5px;
+    border: 2px solid var(--color-main);
+    border-radius: 10px;
+    color: var(--color-main);
+    cursor: pointer;
+}
+
+.transaction-add-btn:hover {
+    border: 2px solid var(--color-main);
+    background-color: var(--color-main);
+    color: var(--color-text-C);
+}
+
+.search-transaction-input {
+    border: 2px solid var(--color-main);
+    border-radius: 10px;
+    width: 30%;
+    height: 20px;
+    cursor: text;
+    text-align: center;
+}
+
+#add-transaction-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2vh;
+    border: 2px solid var(--color-main);
+    border-radius: 10px;
+    padding: 2vh;
+    width: 50%;
+}
+
+.add-transaction-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+.add-transaction-form h2 {
+    color: var(--color-main);
+}
+
+.add-transaction-form input {
+    border: 1px solid var(--color-main);
+    padding: 2px;
+    border-radius: 10px;
+    height: 20px;
+    cursor: text;
+    text-align: center;
+    margin: 0.5vh;
+    width: 100%;
+}
+
+.add-transaction-form button {
+    width: 30%;
+    padding: 5px;
+    margin-top: 1vh;
+    border: 2px solid var(--color-main);
+    background-color: var(--color-main);
+    border-radius: 10px;
+    color: var(--color-text-C);
+    cursor: pointer;
+}
+
+#transaction-block {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.transaction {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.transaction:hover {
+    background-color: var(--color-text-C);
+    transition: .3s;
+}
+
+.transaction-date {
+    width: 15%;
+}
+
+.transaction-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 40%;
+}
+
+.transaction-balance {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+}
+
+.transaction-account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+}
+
+.transaction-settings {
+    display: flex;
+    justify-content: space-around;
+    width: 15%;
+}
+
+.transaction-edit,
+.transaction-delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transaction-edit img,
+.transaction-delete img {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-main);
+    padding: 5px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+}
+
+.transaction-edit a,
+.transaction-delete a {
+    border: 0;
+}
+
+.transaction-info-title h2 {
+    color: var(--color-main);
+}
+
+span.comment {
+    font-size: small;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+/*
+    Планируемые транзакции
+*/
+
+.reminder-transactions-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.add-reminder-transactions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2vh 0;
+    width: 100%;
+}
+
+#reminder-transaction-block {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
 /* планшеты */
 @media (max-width: 768px) {
     aside {
@@ -543,6 +791,7 @@ BLOG
     section.chart,
     section.planned,
     section.forecast {
+        display: block;
         width: 100%;
     }
 
@@ -556,5 +805,67 @@ BLOG
 
     .chart-container {
         height: 30vh;
+    }
+
+    .forecast-container {
+        overflow: scroll;
+    }
+
+    .planned-item {
+        width: 100%;
+    }
+
+    #planned_item_2,
+    #planned_item_3 {
+        display: none;
+    }
+
+    .transaction-container {
+        width: 90%;
+    }
+
+    #add-transaction-div {
+        width: 100%;
+        text-align: center;
+    }
+
+    .add-transaction-form button {
+        width: 80%;
+    }
+
+    #transaction-block {
+        width: 100%;
+    }
+
+    .transaction {
+        flex-direction: column;
+        padding: 10px;
+        height: max-content;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid var(--color-text-B);
+        margin: 5px 0;
+    }
+
+    .transaction-date,
+    .transaction-info,
+    .transaction-balance,
+    .transaction-account {
+        margin: 5px 0;
+        width: 100%;
+    }
+
+    .transaction-settings {
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 5px;
+        width: 100%;
+    }
+
+    .transaction-add-btn {
+        width: 40%;
+        text-align: center;
     }
 }
