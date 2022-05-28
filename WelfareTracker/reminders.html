@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/svg/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <title>Welfare Tracker - трекер благосостояния</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="container">
+                <a class="a-logo" href="./index.html"><img class="logo" src="./assets/svg/logo.svg" alt="logo"></a>
+                <span class="text-logo">Welfare Tracker</span>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="./index.html">Обзор</a></li>
+                        <li class="nav-item"><a href="./transaction.html">Транзакции</a></li>
+                        <li class="nav-item"><a href="./reminders.html">Планируемые транзакции</a></li>
+                    </ul>
+                </nav>
+                <button class="double-border-button">Меню</button>
+                <div class="button-burger">
+                    <div class="line line1"></div>
+                    <div class="line line2"></div>
+                    <div class="line line3"></div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="reminder-transactions-container">
+                <div class="add-reminder-transactions">
+                    <a href="#add-transaction" class="transaction-add-btn" onclick="show_add_transaction()">Добавить транзакцию</a>
+                </div>
+                <div id="add-transaction-div" style="display: none;">
+                    <form class="add-transaction-form">
+                        <input type="date">
+                        <h2>Информация о месте</h2>
+                        <input id="add-transaction-info-title" type="text" maxlength="20">
+                        <h2>Комментарий</h2>
+                        <input id="add-transaction-info-comment" type="text" maxlength="40">
+                        <h2>Сумма</h2>
+                        <input id="add-transaction-balance" type="text" maxlength="15">
+                        <h2>Способ оплаты</h2>
+                        <input id="add-transaction-account" type="text" maxlength="10">
+                        <button>Добавить</button>
+                    </form>
+                </div>
+                <div id="reminder-transaction-block">
+                    <div id="transaction_7" class="transaction">
+                        <div class="transaction-date"><span>25 мая</span></div>
+                        <div class="transaction-info">
+                            <div class="transaction-info-title">
+                                <h2>Зарплата</h2>
+                            </div>
+                            <div class="transaction-info-comment">
+                                <span class="comment">Моя любимая работа ;(</span>
+                            </div>
+                        </div>
+                        <div class="transaction-balance"><span>+2.250$</span></div>
+                        <div class="transaction-account"><span>Карта</span></div>
+                        <div class="transaction-settings">
+                            <div class="transaction-edit">
+                                <a href="#edit-transaction">
+                                    <img src="./assets/svg/pencil.svg" alt="edit">
+                                </a>
+                            </div>
+                            <div class="transaction-delete">
+                                <a href="#delete-transaction">
+                                    <img src="./assets/svg/trash.svg" alt="edit">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="transaction_6" class="transaction">
+                        <div class="transaction-date"><span>26 мая</span></div>
+                        <div class="transaction-info">
+                            <div class="transaction-info-title">
+                                <h2>Покупка автомобиля</h2>
+                            </div>
+                            <div class="transaction-info-comment">
+                                <span class="comment">Mazda 6</span>
+                            </div>
+                        </div>
+                        <div class="transaction-balance"><span>-27.500$</span></div>
+                        <div class="transaction-account"><span>Наличные</span></div>
+                        <div class="transaction-settings">
+                            <div class="transaction-edit">
+                                <a href="#edit-transaction">
+                                    <img src="./assets/svg/pencil.svg" alt="edit">
+                                </a>
+                            </div>
+                            <div class="transaction-delete">
+                                <a href="#delete-transaction">
+                                    <img src="./assets/svg/trash.svg" alt="edit">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="transaction_5" class="transaction">
+                        <div class="transaction-date"><span>30 мая</span></div>
+                        <div class="transaction-info">
+                            <div class="transaction-info-title">
+                                <h2>День рождения друга</h2>
+                            </div>
+                            <div class="transaction-info-comment">
+                                <span class="comment">Мишаня</span>
+                            </div>
+                        </div>
+                        <div class="transaction-balance"><span>-300$</span></div>
+                        <div class="transaction-account"><span>Наличные</span></div>
+                        <div class="transaction-settings">
+                            <div class="transaction-edit">
+                                <a href="#edit-transaction">
+                                    <img src="./assets/svg/pencil.svg" alt="edit">
+                                </a>
+                            </div>
+                            <div class="transaction-delete">
+                                <a href="#delete-transaction">
+                                    <img src="./assets/svg/trash.svg" alt="edit">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="container">
+                <div>
+                    <span>©</span>
+                    <span>2022</span>
+                    <span><a href="https://github.com/Monerd/">github</a></span>
+                </div>
+                <div>
+                    <span>Welfare Tracker</span>
+                </div>
+                <div>
+                    <ul class="footer-social-data-items">
+                        <li class="footer-social-data-item">
+                            <a href="https://www.facebook.com/">
+                                <img src="./assets/svg/facebook.svg" alt="facebook">
+                            </a>
+                        </li>
+                        <li class="footer-social-data-item">
+                            <a href="https://twitter.com/">
+                                <img src="./assets/svg/twitter.svg" alt="twitter">
+                            </a>
+                        </li>
+                        <li class="footer-social-data-item">
+                            <a href="https://web.telegram.org/k/">
+                                <img src="./assets/svg/telegram.svg" alt="telegram">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="./scripts/burger-button.js"></script>
+    <script src="./scripts/show-block.js"></script>
+</body>
+</html>

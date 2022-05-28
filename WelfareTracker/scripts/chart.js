@@ -23,7 +23,7 @@ google.charts.load('current', {'packages':['corechart']});
             vAxis: { format: 'currency' },
           };
   
-          var chart = new google.visualization.LineChart(document.getElementById('chart'));
+          var chart = new google.visualization.LineChart(document.getElementById('googlechart'));
   
           chart.draw(data, options);
         }
