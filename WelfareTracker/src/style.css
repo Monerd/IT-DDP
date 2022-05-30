@@ -32,7 +32,7 @@ main {
 footer {
     display: flex;
     flex: 0 0 auto;
-    margin-top: 2vh;
+    margin-top: auto;
 }
 
 /* 
@@ -56,37 +56,36 @@ footer {
 
 @font-face {
     font-family: 'Lato';
-    src: url('./assets/fonts/lato.woff2') format('woff2'),
-        url('./assets/fonts/lato.woff') format('woff'),
-        url('./assets/fonts/lato.ttf') format('truetype');
+    src: url('../assets/fonts/lato.woff2') format('woff2'),
+        url('../assets/fonts/lato.woff') format('woff'),
+        url('../assets/fonts/lato.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gilroy';
-    src: url('./assets/fonts/gilroy.eot');
-    src: url('./assets/fonts/gilroy.eot?#iefix') format('embedded-opentype'),
-        url('./assets/fonts/gilroy.woff2') format('woff2'),
-        url('./assets/fonts/gilroy.woff') format('woff'),
-        url('./assets/fonts/gilroy.ttf') format('truetype');
+    src: url('../assets/fonts/gilroy.eot');
+    src: url('../assets/fonts/gilroy.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/gilroy.woff2') format('woff2'),
+        url('../assets/fonts/gilroy.woff') format('woff'),
+        url('../assets/fonts/gilroy.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 .container {
+    display: flex;
     margin: 0 auto;
     width: 80%;
     background-color: var(--color-white);
 }
 
 header {
-    height: 60px;
     background-color: var(--color-main);
 }
 
 header .container {
-    display: flex;
     align-items: center;
     background-color: inherit;
     height: 60px;
@@ -94,7 +93,6 @@ header .container {
 }
 
 aside .container {
-    display: flex;
     align-items: center;
     justify-content: flex-start;
     height: 35px;
@@ -103,12 +101,7 @@ aside .container {
     border-top: 2px solid var(--color-text-C);;
 }
 
-.side {
-    cursor: pointer;
-}
-
 main .container {
-    display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
 }
@@ -141,12 +134,10 @@ section.forecast {
 }
 
 footer {
-    height: 60px;
     background-color: var(--color-main);
 }
 
 footer .container {
-    display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: inherit;
@@ -198,6 +189,7 @@ a {
     text-decoration: none;
     border-bottom: 2px solid rgba(255, 255, 255, 0);
     transition: .2s linear;
+    cursor: pointer;
 }
 
 a:hover {
@@ -205,7 +197,21 @@ a:hover {
 }
 
 button {
+    height: max-content;
+    padding: 7.5px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: .4s;
+    color: var(--color-text-B);
+    background-color: var(--color-main);
     cursor: pointer;
+    width: max-content;
+}
+
+button:hover {
+    color: var(--color-main);
+    background-color: var(--color-text-B);
 }
 
 .double-border-button {
@@ -219,7 +225,7 @@ button {
     font-family: 'Lato', sans-serif;
     font-size: 18px;
     transition: .4s;
-  }
+}
 
 .double-border-button:after {
     content: "";
@@ -232,6 +238,7 @@ button {
     height: 100%;
     margin: auto;
     border: 2px solid var(--color-button-ghost-border);
+    border-radius: 10px;
     transition: .4s;
 }
 
@@ -313,6 +320,7 @@ span {
     margin: 0 auto;
 }
 
+label,
 h2 {
     font-family: 'Lato', sans-serif;
     font-weight: normal;
@@ -323,11 +331,20 @@ h2 {
     margin: 0;
 }
 
+label {
+    color: var(--color-main);
+}
+
 .section-title {
     width: max-content;
     margin: 0 auto;
     border-radius: 8px;
     border: 2px solid var(--color-black);
+}
+
+span.balance-title,
+span.balance-count {
+    font-size: 1.5em;
 }
 
 h2.section-title {
@@ -345,6 +362,7 @@ hr {
     display: flex;
     background-color: var(--color-white);
     border: 1vh solid var(--color-text-C);
+    overflow: auto;
     margin: 2vh;
     padding: 1vh;
     height: 20vh;
@@ -354,7 +372,7 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 100%;
     height: 100%;
 }
@@ -395,6 +413,7 @@ hr {
     justify-content: space-around;
     background-color: var(--color-white);
     border: 1vh solid var(--color-text-C);
+    overflow: auto;
     margin: 2vh;
     padding: 1vh;
     height: 20vh;
@@ -438,12 +457,6 @@ hr {
     width: 100%;
 }
 
-/* 
-
-FOOTER
-
-*/
-
 footer a {
     color: var(--color-text-B);
     border: none;
@@ -462,101 +475,31 @@ footer a {
     margin: 0 5px;
 }
 
-/*
-
-BLOG
-
-*/
-
-.article-container {
+.transaction {
     display: flex;
-    width: 80%;
-    margin: 0 auto;
-}
-
-.article-list {
-    list-style-type: none;
+    flex-wrap: wrap;
     width: 100%;
-    margin: 0;
-    padding: 0;
+    height: 70px;
+    padding: 10px;
+    border: 2px solid var(--color-text-B);
+    border-radius: 10px;
+    transition: .3s;
+    margin-top: 2vh;
 }
 
-.article-item {
-    margin: 2vh;
+.transaction.edit {
+    height: max-content;
 }
 
-.article {
-    display: flex;
-    align-items: center;
-    height: 80px;
-    border: 5px solid var(--color-main);
-    border-radius: 50px;
+.transaction:last-child {
+    margin-bottom: 2vh;
 }
 
-.article:hover {
-    transition: .5s;
-    transition-delay: .5s;
-    height: 100%;
+.transaction:hover {
+    background-color: var(--color-text-C);
+    transition: .3s;
 }
-
-.article:hover h2 {
-    transition: .5s;
-    width: 0%;
-    opacity: 0;
-    color: var(--color-white);
-}
-
-.article:hover .article-text {
-    transition: .5s;
-    width: 100%;
-}
-
-.article:hover .article-text::after {
-    display: none;
-}
-
-.article h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20%;
-    height: 100%;
-    padding: 0;
-    color: var(--color-main);
-    transition: .5s;
-}
-
-.article-text {
-    display: flex;
-    position: relative;
-    width: 80%;
-    height: 100%;
-    overflow: hidden;
-    border-radius: 45px;
-    background-color: var(--color-main);
-    color: var(--color-text-C);
-    transition: .5s;
-}
-
-.article-text::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 50%;
-    background: linear-gradient(180deg, transparent, var(--color-main) 70%);
-}
-
-.article-text span {
-    text-align: justify;
-    padding: 20px;
-}
-
-/*
-    Транзакции
-*/
-
+    
 .transaction-container {
     display: flex;
     flex-wrap: wrap;
@@ -574,126 +517,74 @@ BLOG
     width: 100%;
 }
 
-.transaction-add-btn {
-    height: max-content;
-    padding: 5px;
-    border: 2px solid var(--color-main);
+input {
+    border: 1px solid var(--color-main);
+    padding: 2px;
     border-radius: 10px;
-    color: var(--color-main);
-    cursor: pointer;
-}
-
-.transaction-add-btn:hover {
-    border: 2px solid var(--color-main);
-    background-color: var(--color-main);
-    color: var(--color-text-C);
-}
-
-.search-transaction-input {
-    border: 2px solid var(--color-main);
-    border-radius: 10px;
-    width: 30%;
-    height: 20px;
+    height: 28px;
     cursor: text;
     text-align: center;
+    width: 90%;
 }
 
-#add-transaction-div {
+.search-add-transactions input {
+    width: 30%;
+    border: 2px solid var(--color-main);
+}
+
+#transaction-div-form {
+    display: none;
+    width: 50%;
+}
+
+#transaction-div-form.active {
     display: flex;
+}
+
+form {
+    display: flex;
+    padding: 2vh;
+    margin: 2vh;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 2vh;
     border: 2px solid var(--color-main);
     border-radius: 10px;
-    padding: 2vh;
-    width: 50%;
-}
-
-.add-transaction-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 70%;
-}
-
-.add-transaction-form h2 {
-    color: var(--color-main);
-}
-
-.add-transaction-form input {
-    border: 1px solid var(--color-main);
-    padding: 2px;
-    border-radius: 10px;
-    height: 20px;
-    cursor: text;
-    text-align: center;
-    margin: 0.5vh;
+    transition: .2s linear;
     width: 100%;
 }
 
-.add-transaction-form button {
-    width: 30%;
-    padding: 5px;
-    margin-top: 1vh;
-    border: 2px solid var(--color-main);
-    background-color: var(--color-main);
-    border-radius: 10px;
-    color: var(--color-text-C);
-    cursor: pointer;
+form button {
+    width: 100%;
+    margin-top: 2vh;
 }
 
-#transaction-block {
+.transaction-block {
     display: flex;
     flex-wrap: wrap;
-    width: 80%;
-}
-
-.transaction {
-    display: flex;
     width: 100%;
-    height: 70px;
-    padding: 10px;
-    border-radius: 10px;
-    transition: .3s;
 }
 
-.transaction:hover {
-    background-color: var(--color-text-C);
-    transition: .3s;
-}
-
-.transaction-date {
+.transaction-info,
+.transaction-date,
+.transaction-account,
+.transaction-balance,
+.transaction-settings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 15%;
 }
 
 .transaction-info {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     text-align: center;
     width: 40%;
 }
 
-.transaction-balance {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 15%;
-}
-
-.transaction-account {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 15%;
-}
-
 .transaction-settings {
-    display: flex;
     justify-content: space-around;
-    width: 15%;
 }
 
 .transaction-edit,
@@ -728,34 +619,15 @@ span.comment {
     font-weight: lighter;
 }
 
-/*
-    Планируемые транзакции
-*/
-
-.reminder-transactions-container {
+.authorization-container {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: center;
-    width: 80%;
-    margin: 0 auto;
+    width: 60%;
+    margin: 2vh auto;;
 }
 
-.add-reminder-transactions {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 2vh 0;
-    width: 100%;
-}
-
-#reminder-transaction-block {
-    display: flex;
-    flex-wrap: wrap;
-    width: 80%;
-}
-
-/* планшеты */
 @media (max-width: 768px) {
     aside {
         display: none;
@@ -772,8 +644,8 @@ span.comment {
     }
     
     header .double-border-button,
+    header .nav-list,
     section.about,
-    .nav-list,
     .about-img {
         display: none;
     }
@@ -811,6 +683,11 @@ span.comment {
         overflow: scroll;
     }
 
+    .planned-container,
+    .savings-container {
+        height: max-content;
+    }
+
     .planned-item {
         width: 100%;
     }
@@ -824,13 +701,19 @@ span.comment {
         width: 90%;
     }
 
-    #add-transaction-div {
+    #transaction-div-form {
         width: 100%;
         text-align: center;
     }
 
-    .add-transaction-form button {
-        width: 80%;
+    form {
+        display: flex;
+        padding: 2vh 0;
+        width: 95%;
+    }
+
+    form button {
+        width: 92%;
     }
 
     #transaction-block {
@@ -844,7 +727,6 @@ span.comment {
         text-align: center;
         align-items: center;
         justify-content: center;
-        border: 2px solid var(--color-text-B);
         margin: 5px 0;
     }
 
@@ -862,10 +744,5 @@ span.comment {
         gap: 25px;
         margin-top: 5px;
         width: 100%;
-    }
-
-    .transaction-add-btn {
-        width: 40%;
-        text-align: center;
     }
 }

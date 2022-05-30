@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./svg/favicon.ico" type="image/x-icon">
+    <title>Welfare Tracker - трекер благосостояния</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js">
+    </script>
+</head>
+<body>
+    <div id="wrapper" class="wrapper">
+        <header>
+            <div class="container">
+                <a class="a-logo" href="/" onclick="route()"><img class="logo" src="../assets/svg/logo.svg" alt="logo"></a>
+                <span class="text-logo">Welfare Tracker</span>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="/review" onclick="route()">Обзор</a></li>
+                        <li class="nav-item"><a href="/transactions" onclick="route()">Транзакции</a></li>
+                        <li class="nav-item"><a href="/planned-transactions" onclick="route()">Планируемые транзакции</a></li>
+                    </ul>
+                </nav>
+                <button class="double-border-button" onclick="showModal()">Меню</button>
+                <div class="button-burger" onclick="showModal()">
+                    <div class="line line1"></div>
+                    <div class="line line2"></div>
+                    <div class="line line3"></div>
+                </div>
+            </div>
+        </header>
+        <div id="modal-container" class="modal-container">
+            <ul id="modal-list" class="modal-list">
+                <li class="modal-item authorized-user">
+                    <h2 id="user-email">
+
+                    </h2>
+                    <a href="/review" onclick="userExit()">Выйти</a>
+                </li>
+                <li class="modal-item phone-item">
+                    <h2 style="color: #fcf3cf; padding: 0;">Навигация:</h2>
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="/review" onclick="route()">Обзор</a></li>
+                        <li class="nav-item"><a href="/transactions" onclick="route()">Транзакции</a></li>
+                        <li class="nav-item"><a href="/planned-transactions" onclick="route()">Планируемые транзакции</a></li>
+                    </ul>
+                </li>
+                <li class="modal-item login-item">
+                    <a href="/login" onclick="route()">Вход</a>
+                </li>
+            </ul>
+        </div>
+        <div id="inner-content">
+            
+        </div>
+        <footer>
+            <div class="container">
+                <div>
+                    <span>©</span>
+                    <span>2022</span>
+                    <span><a href="https://github.com/Monerd/">github</a></span>
+                </div>
+                <div>
+                    <span>Welfare Tracker</span>
+                </div>
+                <div>
+                    <ul class="footer-social-data-items">
+                        <li class="footer-social-data-item">
+                            <a href="https://www.facebook.com/">
+                                <img src="../assets/svg/facebook.svg" alt="facebook">
+                            </a>
+                        </li>
+                        <li class="footer-social-data-item">
+                            <a href="https://twitter.com/">
+                                <img src="../assets/svg/twitter.svg" alt="twitter">
+                            </a>
+                        </li>
+                        <li class="footer-social-data-item">
+                            <a href="https://web.telegram.org/k/">
+                                <img src="../assets/svg/telegram.svg" alt="telegram">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>  
+    </div>
+</body>
+</html>
