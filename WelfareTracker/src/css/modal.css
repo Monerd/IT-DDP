@@ -1,0 +1,75 @@
+.modal-container {
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s;
+    position: absolute;
+    z-index: 10;
+    right: 5.5%;
+    top: 70px;
+    width: max-content;
+    height: max-content;
+    border: 2px solid #f1c40f;
+    border-radius: 10px;
+    background-color: #1b2634;
+}
+
+.modal-container.active {
+    opacity: 1;
+    visibility: visible;
+    transition: .4s;
+}
+
+.modal-list {
+    display: block;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+}
+
+.modal-item {
+    padding: 0 5px;
+}
+
+.modal-item.authorized-user,
+.modal-item.login-item.active,
+.phone-item {
+    display: none;
+}
+
+.modal-item.authorized-user.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh;
+}
+
+@media (max-width: 768px) {
+    .modal-container {
+        position: absolute;
+        opacity: 0;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-top: 2px solid #f1c40f;
+        border-bottom: 2px solid #f1c40f;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .modal-item.phone-item .nav-list {
+        display: block;
+        padding: 10px;
+    }
+    
+    .modal-item.phone-item .nav-list .nav-item {
+        padding: 10px 0;
+    }
+    
+    .phone-item {
+        display: block;
+    }
+}

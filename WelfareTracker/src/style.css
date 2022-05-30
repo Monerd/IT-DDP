@@ -1,0 +1,748 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-white);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* 
+    Вытягивание содержимого для футера
+*/
+
+html,
+body {
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+main {
+    display: flex;
+    flex: 1 0 auto;
+}
+
+footer {
+    display: flex;
+    flex: 0 0 auto;
+    margin-top: auto;
+}
+
+/* 
+    конец вытягивания.
+*/
+
+:root {
+    --color-main: #1b2634; 
+    --color-secondary: #40597A;
+    --color-text: #f7dc6f;
+    --color-text-B: #f9e79f;
+    --color-text-C: #fcf3cf;
+    --color-button: #f1c40f;
+    --color-button-ghost-border: rgba(0, 0, 0, 0);
+    --color-black: #000;
+    --color-white: #fff;
+    --color-gray: #ededed;
+    --font1: 60px;
+    --font2: 40px;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../assets/fonts/lato.woff2') format('woff2'),
+        url('../assets/fonts/lato.woff') format('woff'),
+        url('../assets/fonts/lato.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../assets/fonts/gilroy.eot');
+    src: url('../assets/fonts/gilroy.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/gilroy.woff2') format('woff2'),
+        url('../assets/fonts/gilroy.woff') format('woff'),
+        url('../assets/fonts/gilroy.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.container {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    background-color: var(--color-white);
+}
+
+header {
+    background-color: var(--color-main);
+}
+
+header .container {
+    align-items: center;
+    background-color: inherit;
+    height: 60px;
+    width: 90%;
+}
+
+aside .container {
+    align-items: center;
+    justify-content: flex-start;
+    height: 35px;
+    width: 100%;
+    background-color: var(--color-main);
+    border-top: 2px solid var(--color-text-C);;
+}
+
+main .container {
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+section {
+    height: max-content;
+}
+
+section.about {
+    margin: 2vh;
+    width: 100%;
+}
+
+section.savings {
+    width: 30%;
+}
+
+section.planned {
+    display: none;
+    width: 70%;
+}
+
+section.chart {
+    width: 70%;
+}
+
+section.forecast {
+    display: none;
+    width: 100%;
+}
+
+footer {
+    background-color: var(--color-main);
+}
+
+footer .container {
+    align-items: center;
+    justify-content: space-between;
+    background-color: inherit;
+    height: 60px;
+    width: 60%;
+    color: var(--color-white);
+}
+
+.a-logo {
+    display: inherit;
+    border: none;
+}
+
+.text-logo {
+    display: none;
+    color: var(--color-white);
+    font-size: 20px;
+}
+
+.logo {
+    width: 44px;
+    height: 44px;
+    border: 3px solid var(--color-text-B);
+    border-radius: 50%;
+    background-color: white;
+}
+
+.nav {
+    margin-left: auto;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+}
+
+.nav-item {
+    padding: 0px 10px;
+}
+
+a {
+    color: var(--color-text-B);
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    text-decoration: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
+    transition: .2s linear;
+    cursor: pointer;
+}
+
+a:hover {
+    border-color: inherit;
+}
+
+button {
+    height: max-content;
+    padding: 7.5px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: .4s;
+    color: var(--color-text-B);
+    background-color: var(--color-main);
+    cursor: pointer;
+    width: max-content;
+}
+
+button:hover {
+    color: var(--color-main);
+    background-color: var(--color-text-B);
+}
+
+.double-border-button {
+    background-color: var(--color-main);
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 7px 24px;
+    position: relative;
+    border: 2px solid var(--color-button);
+    color: var(--color-text-B);
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    transition: .4s;
+}
+
+.double-border-button:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border: 2px solid var(--color-button-ghost-border);
+    border-radius: 10px;
+    transition: .4s;
+}
+
+.double-border-button:hover:after {
+    border-color: var(--color-button);
+    width: calc(100% - 10px);
+    height: calc(100% + 10px);
+}
+
+.button-burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 2;
+}
+  
+.line {
+    width: 80%;
+    height: 2px;
+    background: var(--color-text-B);
+    margin: 3px 0;
+    z-index: 15;
+    transition: all 0.3s ease-in-out;
+}
+  
+.button-burger.open .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+  
+.button-burger.open .line2 {
+    opacity: 0;
+}
+  
+.button-burger.open .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+h1 {
+    font-family: 'Gilroy', sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 30px;
+    margin: 0;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 22px;
+    margin: 0;
+}
+
+span {
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 18px;
+    margin: 0;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+}
+
+.about-text {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.about-img {
+    width: 10em;
+    margin: 0 auto;
+}
+
+label,
+h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 18px;
+    color: var(--color-text-B);
+    padding: 5px;
+    margin: 0;
+}
+
+label {
+    color: var(--color-main);
+}
+
+.section-title {
+    width: max-content;
+    margin: 0 auto;
+    border-radius: 8px;
+    border: 2px solid var(--color-black);
+}
+
+span.balance-title,
+span.balance-count {
+    font-size: 1.5em;
+}
+
+h2.section-title {
+    color: var(--color-main);
+}
+
+hr {
+    border: 1px solid var(--color-main);
+    border-bottom-width: 0;
+    width: 90%;
+}
+
+.savings-container {
+    position: relative;
+    display: flex;
+    background-color: var(--color-white);
+    border: 1vh solid var(--color-text-C);
+    overflow: auto;
+    margin: 2vh;
+    padding: 1vh;
+    height: 20vh;
+}
+
+.savings-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+}
+
+.savings-settings {
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: none;
+    transition: .4s linear;
+}
+
+.savings-container:hover .savings-settings {
+    display: block;
+}
+
+.settings-svg {
+    width: 30px;
+    height: 30px;
+}
+
+.chart-container {
+    background-color: var(--color-text-C);
+    margin: 2vh;
+    padding: 1vh;
+    height: 50vh;
+}
+
+#googlechart {
+    width: 100%;
+    height: 100%;
+}
+
+.planned-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--color-white);
+    border: 1vh solid var(--color-text-C);
+    overflow: auto;
+    margin: 2vh;
+    padding: 1vh;
+    height: 20vh;
+}
+
+.planned-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 33%;
+    height: 100%;
+}
+
+.planned-price-info,
+.planned-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.planned-comment,
+.planned-account {
+    font-style: italic;
+    font-size: small;
+}
+
+.forecast-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--color-white);
+    border: 1vh solid var(--color-text-C);
+    margin: 2vh;
+    padding: 1vh;
+}
+
+.forecast-table {
+    width: 100%;
+}
+
+footer a {
+    color: var(--color-text-B);
+    border: none;
+}
+
+.footer-social-data-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-social-data-item {
+    margin: 0 5px;
+}
+
+.transaction {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 70px;
+    padding: 10px;
+    border: 2px solid var(--color-text-B);
+    border-radius: 10px;
+    transition: .3s;
+    margin-top: 2vh;
+}
+
+.transaction.edit {
+    height: max-content;
+}
+
+.transaction:last-child {
+    margin-bottom: 2vh;
+}
+
+.transaction:hover {
+    background-color: var(--color-text-C);
+    transition: .3s;
+}
+    
+.transaction-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.search-add-transactions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2vh 0;
+    width: 100%;
+}
+
+input {
+    border: 1px solid var(--color-main);
+    padding: 2px;
+    border-radius: 10px;
+    height: 28px;
+    cursor: text;
+    text-align: center;
+    width: 90%;
+}
+
+.search-add-transactions input {
+    width: 30%;
+    border: 2px solid var(--color-main);
+}
+
+#transaction-div-form {
+    display: none;
+    width: 50%;
+}
+
+#transaction-div-form.active {
+    display: flex;
+}
+
+form {
+    display: flex;
+    padding: 2vh;
+    margin: 2vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2vh;
+    border: 2px solid var(--color-main);
+    border-radius: 10px;
+    transition: .2s linear;
+    width: 100%;
+}
+
+form button {
+    width: 100%;
+    margin-top: 2vh;
+}
+
+.transaction-block {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.transaction-info,
+.transaction-date,
+.transaction-account,
+.transaction-balance,
+.transaction-settings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+}
+
+.transaction-info {
+    flex-direction: column;
+    text-align: center;
+    width: 40%;
+}
+
+.transaction-settings {
+    justify-content: space-around;
+}
+
+.transaction-edit,
+.transaction-delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transaction-edit img,
+.transaction-delete img {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-main);
+    padding: 5px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+}
+
+.transaction-edit a,
+.transaction-delete a {
+    border: 0;
+}
+
+.transaction-info-title h2 {
+    color: var(--color-main);
+}
+
+span.comment {
+    font-size: small;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+.authorization-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    width: 60%;
+    margin: 2vh auto;;
+}
+
+@media (max-width: 768px) {
+    aside {
+        display: none;
+    }
+
+    .text-logo {
+        display: inherit;
+        margin-left: auto;
+        color: var(--color-text-B);
+    }
+
+    .button-burger {
+        display: flex;
+    }
+    
+    header .double-border-button,
+    header .nav-list,
+    section.about,
+    .about-img {
+        display: none;
+    }
+
+    main .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    section.savings {
+        margin: 2vh 0 0 0;
+    }
+
+    section.savings,
+    section.chart,
+    section.planned,
+    section.forecast {
+        display: block;
+        width: 100%;
+    }
+
+    footer .container {
+        width: 80%;
+    }
+
+    footer span {
+        font-size: 15px;
+    }
+
+    .chart-container {
+        height: 30vh;
+    }
+
+    .forecast-container {
+        overflow: scroll;
+    }
+
+    .planned-container,
+    .savings-container {
+        height: max-content;
+    }
+
+    .planned-item {
+        width: 100%;
+    }
+
+    #planned_item_2,
+    #planned_item_3 {
+        display: none;
+    }
+
+    .transaction-container {
+        width: 90%;
+    }
+
+    #transaction-div-form {
+        width: 100%;
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        padding: 2vh 0;
+        width: 95%;
+    }
+
+    form button {
+        width: 92%;
+    }
+
+    #transaction-block {
+        width: 100%;
+    }
+
+    .transaction {
+        flex-direction: column;
+        padding: 10px;
+        height: max-content;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: 5px 0;
+    }
+
+    .transaction-date,
+    .transaction-info,
+    .transaction-balance,
+    .transaction-account {
+        margin: 5px 0;
+        width: 100%;
+    }
+
+    .transaction-settings {
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 5px;
+        width: 100%;
+    }
+}

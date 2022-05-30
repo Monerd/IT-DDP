@@ -1,0 +1,115 @@
+<aside>
+    <div class="container">
+        <ul class="nav-list">
+            <li class="side nav-item"><a onclick="switchChartTable('chartSection')">График</a></li>
+            <li class="side nav-item"><a onclick="switchChartTable('plannedSection')">Платежи и прогноз</a></li>
+        </ul>
+    </div>
+</aside>
+<main>
+    <div class="container">
+        <!-- краткая информация о сайте -->
+        <section class="about">
+            <div class="about-container">
+                <div class="about-text">
+                    <h1>Welfare Tracker</h1>
+                    <p>
+                        С нами вести финансы станет просто как никогда!<br>
+                        Ведите учёт доходов и расходов в пару кликов.
+                    </p>
+                </div>
+                <img class="about-img" src="../assets/img/money.jpg" alt="money">
+            </div>
+        </section>
+        <!-- счета -->
+        <section class="savings">
+            <h2 class="section-title">
+                Мои счета
+            </h2>
+            <div class="savings-container">
+                <div class="savings-item">
+                    <a class="savings-settings" href="#saving-settings">
+                        <img class="settings-svg" src="../assets/svg/gears.svg" alt="Настройки">
+                    </a>
+                    <span class="balance-title">Баланс</span>
+                    <span class="balance-count">10.000$</span>
+                </div>
+            </div>
+        </section>
+        <!-- график сбережений -->
+        <section id="chartSection" class="chart">
+            <h2 class="section-title">
+                График сбережений
+            </h2>
+            <div class="chart-container">
+                <div id="googlechart"></div>
+            </div>
+        </section>
+        <!-- запланированные платежи -->
+        <section id="plannedSection" class="planned">
+            <h2 class="section-title">
+                Платежи
+            </h2>
+            <div class="planned-container">
+                <div id="planned_item_1" class="planned-item">
+                    <div class="date">
+                        <span>29 марта</span>
+                    </div>
+                    <hr>
+                    <div class="planned-price-info">
+                        <span class="planned-price">750$</span>
+                        <span class="planned-account">Наличка</span>
+                    </div>
+                    <hr>
+                    <div class="planned-info">
+                        <span class="planned-place">Ремонт автомобиля</span>
+                        <span class="planned-comment">Mazda 6</span>
+                    </div>
+                </div>
+                <div id="planned_item_2" class="planned-item">
+                    <div class="date">
+                        <span>1 апреля</span>
+                    </div>
+                    <hr>
+                    <div class="planned-price-info">
+                        <span class="planned-price">80$</span>
+                        <span class="planned-account">Карта</span>
+                    </div>
+                    <hr>
+                    <div class="planned-info">
+                        <span class="planned-place">Покупка шуточных подарков</span>
+                        <span class="planned-comment">Шарики, хлопушки</span>
+                    </div>
+                </div>
+                <div id="planned_item_3" class="planned-item">
+                    <div class="date">
+                        <span>29 марта</span>
+                    </div>
+                    <hr>
+                    <div class="planned-price-info">
+                        <span class="planned-price">173$</span>
+                        <span class="planned-account">Наличка</span>
+                    </div>
+                    <hr>
+                    <div class="planned-info">
+                        <span class="planned-place">Евроопт</span>
+                        <span class="planned-comment">Еда на месяц</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- прогноз сбережений -->
+        <section id="forecastSection" class="forecast">
+            <h2 class="section-title">
+                Прогноз сбережений
+            </h2>
+            <div class="forecast-container">
+                <div class="forecast-background">
+                    <table class="forecast-table">
+
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

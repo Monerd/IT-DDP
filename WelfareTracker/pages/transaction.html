@@ -1,0 +1,25 @@
+<main>
+    <div class="transaction-container">
+        <div class="search-add-transactions">
+            <input maxlength="40" type="text" tabindex="0" placeholder="Поиск по сумме, категории, комментарию...">
+            <button onclick="showTransactionForm()">Добавить транзакцию</a>
+        </div>
+        <div id="transaction-div-form">
+            <form id="transaction-form">
+                <input id="add-transaction-date" type="date">
+                <label for="add-transaction-info-title">Информация о месте</label>
+                <input id="add-transaction-info-title" type="text" maxlength="20">
+                <label for="add-transaction-info-comment">Комментарий</label>
+                <input id="add-transaction-info-comment" type="text" maxlength="40">
+                <label for="add-transaction-balance">Сумма</label>
+                <input id="add-transaction-balance" type="number" maxlength="15">
+                <label for="add-transaction-account">Способ оплаты</label>
+                <input id="add-transaction-account" type="text" maxlength="10">
+                <button type="submit" id="submit">Добавить</button>
+            </form>
+        </div>
+        <div id="transaction-block" class="transaction-block">
+
+        </div>
+    </div>
+</main>
